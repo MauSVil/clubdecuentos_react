@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router } from "@reach/router"
+import CreaTuCuento from './views/CreaTuCuento';
+import Header from './components/Header';
+import Home from './views/Home/Home';
+import { withStyles } from '@material-ui/styles'
 
-function App() {
+
+const styles = {
+  contentContainer:{
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '30px',
+  }
+}
+
+function App(props) {
+
+  const { classes } = props
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className={classes.contentContainer}>
+        <Router>
+          <Home path="/" />
+          <CreaTuCuento path="/creatucuento" />
+        </Router>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default withStyles(styles)(App);
+
