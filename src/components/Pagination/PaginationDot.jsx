@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const styles = {
   root: {
-    height: 18,
-    width: 18,
+    height: 20,
+    width: 25,
     cursor: 'pointer',
     border: 0,
     background: 'none',
@@ -13,8 +13,7 @@ const styles = {
   dot: {
     backgroundColor: '#e4e6e7',
     height: 12,
-    width: 12,
-    borderRadius: 6,
+    width: 15,
     margin: 3,
   },
   active: {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles'
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 const styles = {
     storyContainer: {
@@ -16,7 +17,10 @@ const styles = {
         border: '1px solid black',
     },
     selected: {
-        opacity: '0.5',
+        opacity: '1',
+    },
+    disable: {
+        display: 'none',
     },
     storyTitle: {   
         marginTop: '10px',
@@ -28,16 +32,21 @@ const styles = {
 }
 
 const Cuento = (props) => {
-    const { title, author, cost, selected, classes } = props;
+    const { title, author, cost, selected, classes, onClick, i, firstTime } = props;
     
     const cuento = clsx(
         classes.storyContainer,
-        selected && classes.selected
+        selected || firstTime ? classes.selected : classes.disable
     )
 
+    const handleClick= (i)=>{
+        onClick(i)
+    }
+
     return (
+        // selected && (
         <div
-            onClick={props.onClick} 
+            onClick={()=>{handleClick(i, firstTime)}} 
             className={cuento}
         >
             <img src="" alt="Foto Cuento"/>
@@ -52,7 +61,12 @@ const Cuento = (props) => {
                 voluptatibus architecto in dolorum!
             </p>
         </div>
-    );
+        )
+    // );
+};
+
+Cuento.propTypes = {
+    selected: PropTypes.bool,
 };
 
 export default withStyles(styles)(Cuento);

@@ -2,6 +2,7 @@ import React from 'react';
 import InfoCard from '../../components/InfoCard';
 import ContactSlider from '../../components/ContactSlider';
 import { withStyles } from '@material-ui/styles'
+import Heroe from '../../components/Heroe';
 
 const styles= {
     homeContainer: {
@@ -13,6 +14,7 @@ const Home = (props) => {
     const { classes } = props
     return (
         <div className={classes.homeContainer}>
+            <Heroe/>
             <InfoCard
                 title={'¿Que es Mi Club de Cuentos?'}
                 hasLineDivider={true}

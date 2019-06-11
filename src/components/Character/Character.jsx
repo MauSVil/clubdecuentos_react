@@ -38,6 +38,7 @@ const styles={
 }
 
 class Character extends Component {
+    
     state={
         name: '',
         lastname:'',
@@ -54,6 +55,12 @@ class Character extends Component {
         this.setState({
             [e.target.name]:e.target.value,
         })
+    }
+
+    handleDecline= (e)=>{
+        e.preventDefault()
+        this.props.onClick()
+        // console.log("hola")
     }
 
     render() {
@@ -248,6 +255,10 @@ class Character extends Component {
                                 Negro
                             </option>
                         </select>
+                    </div>
+                    <div>
+                        <button>Accept</button>
+                        <button onClick={this.props.onClick}>Decline</button>
                     </div>
                 </form>
             </div>
