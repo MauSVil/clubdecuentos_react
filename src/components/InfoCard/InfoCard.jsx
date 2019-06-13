@@ -5,7 +5,7 @@ import clsx from 'clsx'
 const styles= {
     infoContainer: {
         marginTop: '30px',
-        // border: '1px solid black',
+        border: '1px solid black',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -34,7 +34,7 @@ const styles= {
 
 const InfoCard = (props) => {
 
-    const { classes, title, hasLineDivider, hasImage, columns, children} = props
+    const { classes, title, hasLineDivider, hasImage, image, columns, children} = props
 
     const infoContent = clsx(
         classes.infoContent,
@@ -43,7 +43,7 @@ const InfoCard = (props) => {
 
     return (
         <div className={classes.infoContainer}>
-            { hasImage && <img src="" alt="Imagen de Info"/> }
+            { hasImage && <img src={image} alt="Imagen de Info"/> }
             <h1>
                 {title}
             </h1>

@@ -8,6 +8,8 @@ const styles={
     },
     form: {
         display: 'flex',
+        height: '75%',
+        minWidth: '310px',
         flexDirection: 'row',
         minWidth: '300px',
         justifyContent: 'center',
@@ -16,7 +18,7 @@ const styles={
     labels: {
         display: 'flex',
         flexDirection: 'column',
-        width: '100px',
+        width: '150px',
         height: '100%',
         justifyContent: 'space-around',
         '& label':{
@@ -256,11 +258,11 @@ class Character extends Component {
                             </option>
                         </select>
                     </div>
-                    <div>
-                        <button>Accept</button>
-                        <button onClick={this.props.onClick}>Decline</button>
-                    </div>
                 </form>
+                <div>
+                    <button>Accept</button>
+                    <button onClick={this.props.onClick}>Decline</button>
+                </div>
             </div>
         );
     }

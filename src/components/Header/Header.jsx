@@ -29,7 +29,7 @@ const Header = (props) => {
             <div className={classes.links}>
                 <Link to="/">Home</Link>
                 <Link to="creatucuento">Crea Tu Cuento</Link>
-                <Link to="singin">Sign In</Link>
+                <Link to="signin">Sign In</Link>
                 <Link to="signup">Sign Up</Link>
                 <Link to="profile">Profile</Link>
             </div>

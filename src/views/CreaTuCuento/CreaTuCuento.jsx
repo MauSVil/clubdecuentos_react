@@ -7,7 +7,7 @@ import cuentos from '../../cuentos'
 
 const styles={
     creaTuCuentoContainer: {
-        width: '100%',
+        padding: '30px'
     }
 }
 

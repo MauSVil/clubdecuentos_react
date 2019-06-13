@@ -5,6 +5,9 @@ import Header from './components/Header';
 import Home from './views/Home/Home';
 import { withStyles } from '@material-ui/styles'
 import texture from './assets/texture1.png'
+import Footer from './components/Footer';
+import SignIn from './views/SingIn';
+import SignUp from './views/SingUp';
 
 
 const styles = {
@@ -29,8 +32,11 @@ function App(props) {
         <Router>
           <Home path="/" />
           <CreaTuCuento path="/creatucuento" />
+          <SignIn path="/signin" />
+          <SignUp path="/signup" />
         </Router>
       </div>
+      <Footer/>
     </div>
   );
 }

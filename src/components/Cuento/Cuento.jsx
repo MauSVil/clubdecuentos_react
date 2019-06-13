@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const styles = {
     storyContainer: {
         display: 'flex',
+        maxWidth: '300px',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',

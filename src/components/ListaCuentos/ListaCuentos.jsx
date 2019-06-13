@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import Cuento from '../Cuento'
-import '../../syles/ListaCuentos/listaCuentos.css';
 import Character from '../Character';
+import { withStyles } from '@material-ui/styles'
+
+const styles = {
+  storiesContainer: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    gridGap: '20px'
+  },
+  historySelected: {
+    display: 'flex',
+    alignItems: 'center',
+  }
+}
 
 class ListaCuentos extends Component {
   state={
@@ -10,6 +22,7 @@ class ListaCuentos extends Component {
     showCharacter: false,
   }
 
+  
   historySelected= (i)=>{
     this.setState({
       index: i,
@@ -17,7 +30,7 @@ class ListaCuentos extends Component {
       showCharacter: true,
     })
   }
-
+  
   handleClickDecline=(e)=>{
     e.preventDefault()
     this.setState({
@@ -25,12 +38,13 @@ class ListaCuentos extends Component {
       firstTime: true,
     })
   }
-
+  
   render() {
     const {cuentos} = this.props;
     const {showCharacter} = this.state
+    const { classes } = this.props;
     return (
-      <div className="storiesContainer">
+      <div className={showCharacter ? classes.historySelected : classes.storiesContainer}>
       {cuentos.map((cuento, i)=>{
         const {title, author, cost, description} = cuento
         return(
@@ -52,4 +66,5 @@ class ListaCuentos extends Component {
   }
 }
 
-export default ListaCuentos;
+export default withStyles(styles)(ListaCuentos);
+

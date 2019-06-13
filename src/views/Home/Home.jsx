@@ -3,6 +3,8 @@ import InfoCard from '../../components/InfoCard';
 import ContactSlider from '../../components/ContactSlider';
 import { withStyles } from '@material-ui/styles'
 import Heroe from '../../components/Heroe';
+import Eliza from '../../assets/eliza.png'
+import Oso from '../../assets/oso.png'
 
 const styles= {
     homeContainer: {
@@ -48,6 +50,8 @@ const Home = (props) => {
             >
                 <InfoCard
                     title={'Osito Tomas'}
+                    image={Oso}
+                    hasImage={true}
                 >
                     <p>
                         Es un pequeño que vive con 
@@ -62,6 +66,8 @@ const Home = (props) => {
                 </InfoCard>
                 <InfoCard
                     title={'Eliza'}
+                    image={Eliza}
+                    hasImage={true}
                 >
                     <p>
                         Eliza es una niña curiosa e inquieta 
