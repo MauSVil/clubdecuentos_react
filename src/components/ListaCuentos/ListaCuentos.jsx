@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cuento from '../Cuento'
 import Character from '../Character';
 import { withStyles } from '@material-ui/styles'
+import clsx from 'clsx';
 
 const styles = {
   storiesContainer: {
@@ -12,7 +13,7 @@ const styles = {
   historySelected: {
     display: 'flex',
     alignItems: 'center',
-  }
+  },
 }
 
 class ListaCuentos extends Component {
@@ -43,8 +44,14 @@ class ListaCuentos extends Component {
     const {cuentos, toggleStory} = this.props;
     const {showCharacter} = this.state
     const { classes } = this.props;
+    const storyAppearance = clsx(
+      {
+        [classes.historySelected] : showCharacter,
+        [classes.storiesContainer] : !showCharacter,
+      }
+    )
     return (
-      <div className={showCharacter ? classes.historySelected : classes.storiesContainer}>
+      <div className={storyAppearance}>
       {cuentos.map((cuento, i)=>{
         const {title, author, cost, description} = cuento
         return(
