@@ -8,7 +8,6 @@ const styles={
     },
     form: {
         display: 'flex',
-        height: '75%',
         minWidth: '310px',
         flexDirection: 'row',
         minWidth: '300px',
