@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles'
-import colaborador1 from '../../assets/colaborador01.png'
 
 const styles= {
     contactContainer:{
@@ -15,7 +14,6 @@ const styles= {
     },
     imageContainer: {
         backgroundSize: 'cover',
-        // backgroundImage: `url(${colaborador1})`,
         borderRadius: '50%',
         border: '2px solid black',
         height: '70px',

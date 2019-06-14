@@ -40,7 +40,7 @@ class ListaCuentos extends Component {
   }
   
   render() {
-    const {cuentos} = this.props;
+    const {cuentos, toggleStory} = this.props;
     const {showCharacter} = this.state
     const { classes } = this.props;
     return (
@@ -60,7 +60,11 @@ class ListaCuentos extends Component {
           />
         )
       })}
-      {showCharacter && <Character onClick={this.handleClickDecline}/>}
+      {showCharacter && 
+      <Character
+        onClick={this.handleClickDecline}
+        toggleStory={toggleStory}
+      />}
     </div>
     );
   }

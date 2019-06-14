@@ -65,7 +65,7 @@ class Character extends Component {
     }
 
     render() {
-        const { classes } = this.props
+        const { classes, toggleStory } = this.props
         return (
             <div className={classes.characterContainer}>
                 <div>
@@ -259,7 +259,7 @@ class Character extends Component {
                     </div>
                 </form>
                 <div>
-                    <button>Accept</button>
+                    <button onClick={()=>toggleStory()}>Accept</button>
                     <button onClick={this.props.onClick}>Decline</button>
                 </div>
             </div>
