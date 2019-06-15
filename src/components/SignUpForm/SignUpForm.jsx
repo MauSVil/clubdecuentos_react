@@ -36,7 +36,6 @@ class SignUpForm extends Component {
       
       render() {
         const { classes } = this.props
-        const { index } = this.state;
         return (
             <div className={classes.signInInputs}>
                 <TextField
