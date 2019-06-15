@@ -37,6 +37,7 @@ class ListaCuentos extends Component {
     this.setState({
       showCharacter: false,
       firstTime: true,
+      selected: false,
     })
   }
   
@@ -53,9 +54,10 @@ class ListaCuentos extends Component {
     return (
       <div className={storyAppearance}>
       {cuentos.map((cuento, i)=>{
-        const {title, author, cost, description} = cuento
+        const {title, author, cost, description, image} = cuento
         return(
           <Cuento
+            image={image}
             firstTime={this.state.firstTime}
             i={i}
             selected={i===this.state.index}

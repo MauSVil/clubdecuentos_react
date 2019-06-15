@@ -61,7 +61,6 @@ class Character extends Component {
     handleDecline= (e)=>{
         e.preventDefault()
         this.props.onClick()
-        // console.log("hola")
     }
 
     render() {
@@ -70,7 +69,6 @@ class Character extends Component {
             <div className={classes.characterContainer}>
                 <div>
                     <Avatar
-                        // style={{width: '100px', height: '100px'}}
                         avatarStyle='Circle'
                         topType={this.state.hairStyle}
                         accessoriesType={this.state.accessoriesType}

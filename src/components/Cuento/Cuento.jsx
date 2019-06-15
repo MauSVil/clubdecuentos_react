@@ -29,11 +29,15 @@ const styles = {
     },
     storyInfo: {
         margin: '5px',
+    },
+    image: {
+        width: '200px',
+        height: '200px',
     }
 }
 
 const Cuento = (props) => {
-    const { title, author, cost, selected, classes, onClick, i, firstTime } = props;
+    const { title, author, cost, selected, classes, onClick, i, firstTime, image } = props;
     
     const cuento = clsx(
         classes.storyContainer,
@@ -47,20 +51,21 @@ const Cuento = (props) => {
     return (
         // selected && (
         <div
-            onClick={()=>{handleClick(i, firstTime)}} 
+            onClick={()=>{handleClick(i)}} 
             className={cuento}
         >
-            <img src="" alt="Foto Cuento"/>
+            <img src={image} alt="Foto Cuento" className={classes.image}/>
             <h3 className={classes.storyTitle}>{title}</h3>
             <p className={classes.storyInfo}><strong>{author}</strong></p>
             <p className={classes.storyInfo}>{cost}</p>
-            <p className={classes.storyInfo}>
+            {firstTime && <p className={classes.storyInfo}>
                 Lorem ipsum, dolor sit amet consectetur adipisicing 
                 elit. Magnam quo molestiae fuga, fugit cumque maiores 
                 rerum totam natus ab temporibus a quos 
                 illo corrupti perferendis dolores 
                 voluptatibus architecto in dolorum!
             </p>
+            }
         </div>
         )
     // );

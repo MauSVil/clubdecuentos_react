@@ -18,6 +18,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     padding: '30px',
+    minHeight: '80.8vh'
   }
 }
 

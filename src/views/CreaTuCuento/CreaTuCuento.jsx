@@ -29,7 +29,7 @@ const styles={
         height: '0px',
     },
     blur: {
-        // filter: 'blur(4px)',
+        filter: 'blur(4px)',
     }
 }
 

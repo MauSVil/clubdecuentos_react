@@ -1,32 +1,35 @@
+import Cuento1 from '../src/assets/Cuento1.png'
+import Cuento2 from '../src/assets/Cuento2.png'
+import Cuento3 from '../src/assets/Cuento3.png'
+import Cuento4 from '../src/assets/Cuento4.png'
+
 const cuentos = [
     {
-        title: 'El tatuador de Aushwitz',
+        image: Cuento1,
+        title: 'El niño del Columpio',
         author: 'Heather Morris',
         cost: '122MX',
         description: 'Buen libro'
     },
     {
-        title: 'Como hacer que te pasen cosas buenas',
+        image: Cuento2,
+        title: 'El acertijo mas dificil',
         author: 'Marian Rojas',
-        cost: '12222MX',
+        cost: '52MX',
         description: 'Mal libro'
     },
     {
-        title: 'Como hacer que te pasen cosas buenas',
+        image: Cuento3,
+        title: 'Fantasy Holidays',
         author: 'Marian Rojas',
-        cost: '12222MX',
+        cost: '222MX',
         description: 'Mal libro'
     },
     {
-        title: 'Como hacer que te pasen cosas buenas',
+        image: Cuento4,
+        title: 'The island of dreams',
         author: 'Marian Rojas',
-        cost: '12222MX',
-        description: 'Mal libro'
-    },
-    {
-        title: 'Como hacer que te pasen cosas buenas',
-        author: 'Marian Rojas',
-        cost: '12222MX',
+        cost: '100MX',
         description: 'Mal libro'
     },
 ];
