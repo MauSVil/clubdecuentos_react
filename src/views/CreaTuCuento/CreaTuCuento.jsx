@@ -10,6 +10,9 @@ const styles={
     creaTuCuentoContainer: {
         padding: '30px',
         position: 'relative',
+        '& h2': {
+            textAlign: 'center',
+        }
     },
     completeStory: {
         display:'flex',
@@ -55,23 +58,22 @@ class CreaTuCuento extends Component {
             }
         )
         return (
-            <>
-                <div className={classes.creaTuCuentoContainer}>
-                    <div className={completeStory}>
-                        <OutsideClickHandler
-                            onOutsideClick={()=>this.setState({showStory :false})}
-                            >
-                                <ContenidoCuento/>
-                        </OutsideClickHandler>
-                    </div>
-                    <div className={showStory ? classes.blur : classes.normal}>
-                        <ListaCuentos
-                            cuentos={cuentos}
-                            toggleStory={this.toggleStory}
-                        />
-                    </div>
+            <div className={classes.creaTuCuentoContainer}>
+                <div className={completeStory}>
+                    <OutsideClickHandler
+                        onOutsideClick={()=>this.setState({showStory :false})}
+                        >
+                            <ContenidoCuento/>
+                    </OutsideClickHandler>
                 </div>
-            </>
+                <h2>Crea Tu Cuento</h2>
+                <div className={showStory ? classes.blur : classes.normal}>
+                    <ListaCuentos
+                        cuentos={cuentos}
+                        toggleStory={this.toggleStory}
+                    />
+                </div>
+            </div>
         );
     }
 }

@@ -8,7 +8,7 @@ const styles = {
   storiesContainer: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gridGap: '20px'
+    gridGap: '20px',
   },
   historySelected: {
     display: 'flex',
