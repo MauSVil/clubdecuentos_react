@@ -1,5 +1,4 @@
-const users= [
-    {
+const users = [{
         user: 'msv789',
         password: 'msv789'
     },
@@ -10,6 +9,10 @@ const users= [
     {
         user: 'hola',
         password: 'mundo',
+    },
+    {
+        user: 'mau',
+        password: 'sanchez',
     }
 ]
 
