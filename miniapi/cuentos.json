@@ -1,0 +1,31 @@
+[
+    {
+        "image": "../src/assets/Cuento1.png",
+        "title": "El niño del Columpio",
+        "author": "Heather Morris",
+        "cost": 122.00,
+        "description": "Buen libro"
+    },
+    {
+        "image": "../src/assets/Cuento2.png",
+        "title": "El acertijo mas dificil",
+        "author": "Marian Rojas",
+        "cost": 52.00,
+        "description": "Mal libro"
+    },
+    {
+        "image": "../src/assets/Cuento3.png",
+        "title": "Fantasy Holidays",
+        "author": "Marian Rojas",
+        "cost": 222.00,
+        "description": "Mal libro"
+    },
+    {
+        "image": "../src/assets/Cuento4.png",
+        "title": "The island of dreams",
+        "author": "Marian Rojas",
+        "cost": 100.00,
+        "description": "Mal libro"
+    }
+]
+
