@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ListaCuentos from '../../components/ListaCuentos';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { withStyles } from '@material-ui/styles'
-import cuentos from '../../cuentos'
 import ContenidoCuento from '../../components/ContenidoCuento/ContenidoCuento';
 import clsx from 'clsx';
 
@@ -77,7 +76,6 @@ class CreaTuCuento extends Component {
                 <h2>Crea Tu Cuento</h2>
                 <div className={showStory ? classes.blur : classes.normal}>
                     <ListaCuentos
-                        cuentos={cuentos}
                         toggleStory={this.toggleStory}
                     />
                 </div>
