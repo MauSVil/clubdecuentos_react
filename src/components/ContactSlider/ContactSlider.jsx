@@ -46,22 +46,22 @@ class ContactSlider extends React.Component {
     return (
       <div className={classes.root}>
         <AutoPlaySwipeableViews index={index} onChangeIndex={this.handleChangeIndex}>
-          <Contact name="Karla Puga" role="Fundadora Mi Club De Cuentos">
+          <Contact name="Karla Puga" projectRole="Fundadora Mi Club De Cuentos">
             <img src={colaborador1} alt="colaborador1"/>
           </Contact>
-          <Contact name="Karla Estefani Barboza Marrero" role="Escritora">
+          <Contact name="Karla Estefani Barboza Marrero" projectRole="Escritora">
             <img src={colaborador2} alt="colaborador2"/>
           </Contact>
-          <Contact name="Valentinza Andrade" role="Escritora">
+          <Contact name="Valentinza Andrade" projectRole="Escritora">
             <img src={colaborador3} alt="colaborador3"/>
           </Contact>
-          <Contact name="Dernando José Do Rosario" role="Escritor">
+          <Contact name="Dernando José Do Rosario" projectRole="Escritor">
             <img src={colaborador4} alt="colaborador4"/>
           </Contact>
-          <Contact name="Caro V. Lucero" role="Ilustradora">
+          <Contact name="Caro V. Lucero" projectRole="Ilustradora">
             <img src={colaborador5} alt="colaborador5"/>
           </Contact>
-          <Contact name="Jose y Daniel Gil" role="Ilustradores">
+          <Contact name="Jose y Daniel Gil" projectRole="Ilustradores">
             <img src={colaborador6} alt="colaborador6"/>
           </Contact>
         </AutoPlaySwipeableViews>

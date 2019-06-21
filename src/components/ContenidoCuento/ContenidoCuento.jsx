@@ -3,7 +3,8 @@ import { withStyles } from '@material-ui/styles'
 
 const styles= {
     superContainer: {
-        padding: '30px'
+        padding: '30px',
+        height: '440px',
     },
     contenidoContainer: {
         display: 'grid',

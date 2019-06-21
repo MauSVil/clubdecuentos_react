@@ -33,6 +33,11 @@ const styles={
     },
     blur: {
         filter: 'blur(4px)',
+    },
+    storyContentContainer: {
+        zIndex: '1000',
+        backgroundColor: 'white',
+        
     }
 }
 
@@ -60,11 +65,14 @@ class CreaTuCuento extends Component {
         return (
             <div className={classes.creaTuCuentoContainer}>
                 <div className={completeStory}>
-                    <OutsideClickHandler
-                        onOutsideClick={()=>this.setState({showStory :false})}
-                        >
+                    <div className={classes.storyContentContainer}>
+
+                        <OutsideClickHandler
+                            onOutsideClick={()=>this.setState({showStory :false})}
+                            >
                             <ContenidoCuento/>
-                    </OutsideClickHandler>
+                        </OutsideClickHandler>
+                    </div>
                 </div>
                 <h2>Crea Tu Cuento</h2>
                 <div className={showStory ? classes.blur : classes.normal}>

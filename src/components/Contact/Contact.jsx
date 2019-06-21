@@ -22,8 +22,8 @@ const styles= {
 }
 
 const Contact = (props) => {
-    const { classes, name, role, children } = props
-    const work = role.toUpperCase()
+    const { classes, name, projectRole, children } = props
+    const work = projectRole.toUpperCase()
     return (
         <div className={classes.contactContainer}>
             <div>
