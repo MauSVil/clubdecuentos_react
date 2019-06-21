@@ -17,6 +17,8 @@ def cuentos():
 
     response.headers["Content-Type"] = "application/json"
     response.headers["Cache-Control"] = "no-cache"
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, OPTIONS"
 
     return json.dumps(cuentos, indent=4)
 
