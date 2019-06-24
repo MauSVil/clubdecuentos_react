@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles'
+import axios from 'axios';
 
 const styles = {
     signInInputs: {
@@ -34,7 +35,13 @@ class SignUpForm extends Component {
       };
 
       handleSubmit = ()=>{
-        console.log(this.state)
+        axios.post('http://localhost:3800/api/user', this.state)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
       }
       
       render() {

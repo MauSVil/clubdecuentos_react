@@ -46,10 +46,10 @@ class CreaTuCuento extends Component {
         showStory: false,
     }
 
-    // componentDidMount = async () =>{
-    //     const response = await axios.get('http://localhost:3800/api/users')
-    //     console.log(response.data.users[0].name)
-    // }
+    componentDidMount = async () =>{
+        const response = await axios.get('http://localhost:3800/api/users')
+        console.log(response.data.users)
+    }
 
     toggleStory = ()=>{
         this.setState({
