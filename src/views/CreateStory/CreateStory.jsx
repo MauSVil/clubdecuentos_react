@@ -4,6 +4,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { withStyles } from '@material-ui/styles'
 import ContenidoCuento from '../../components/ContenidoCuento/ContenidoCuento';
 import clsx from 'clsx';
+import axios from 'axios';
 
 const styles={
     creaTuCuentoContainer: {
@@ -44,6 +45,11 @@ class CreaTuCuento extends Component {
     state={
         showStory: false,
     }
+
+    // componentDidMount = async () =>{
+    //     const response = await axios.get('http://localhost:3800/api/users')
+    //     console.log(response.data.users[0].name)
+    // }
 
     toggleStory = ()=>{
         this.setState({

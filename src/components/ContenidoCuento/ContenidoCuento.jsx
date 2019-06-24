@@ -83,7 +83,6 @@ class ContenidoCuento extends Component {
     }
     
     render() {
-        console.log(this.contenidoCuento)
         const { classes } = this.props
         return (
             <div className={classes.superContainer}>
@@ -92,7 +91,6 @@ class ContenidoCuento extends Component {
                         className={classes.page}
                         onClick={this.previousPage}
                     >
-                        {console.log(this.contenidoCuento[this.state.pagina])}
                         <p>
                             {this.contenidoCuento[this.state.pagina][0]}
                         </p>

@@ -17,7 +17,7 @@ class SignInForm extends Component {
         username: '',
         password: '',
         errors: {
-            userCorrect: false
+            userCorrect: ''
         }
     }
 
@@ -67,7 +67,7 @@ class SignInForm extends Component {
                     />
                 </div>
                 <Button size="small" variant="outlined" onClick={()=>this.handleSubmit()}>
-                    Hola
+                    Sign In
                 </Button>
                 {this.state.errors.userCorrect ? <p>
                     Lo hiciste bien!

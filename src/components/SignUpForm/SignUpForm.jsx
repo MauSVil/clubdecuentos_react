@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles'
 
 const styles = {
@@ -18,62 +19,73 @@ const styles = {
 
 class SignUpForm extends Component {
     state = {
-        index: 0,
+        name: '',
+        username: '',
+        email: '',
+        gender: '',
+        password: '',
+        address: '',
       };
     
-      handleChange = (event, value) => {
+      handleChange = (e) => {
         this.setState({
-          index: value,
-        });
-      };
-    
-      handleChangeIndex = index => {
-        this.setState({
-          index,
-        });
+            [e.target.id]: e.target.value
+        })
       };
 
+      handleSubmit = ()=>{
+        console.log(this.state)
+      }
       
       render() {
         const { classes } = this.props
         return (
             <div className={classes.signInInputs}>
                 <TextField
-                    id="standard-name"
+                    id="name"
                     label="Name"
+                    onChange={this.handleChange}
                     // className={classes.textField}
                     margin="normal"
                 />
                 <TextField
-                    id="standard-name"
+                    id="username"
                     label="Username"
+                    onChange={this.handleChange}
                     // className={classes.textField}
                     margin="normal"
                 />
                 <TextField
-                    id="standard-name"
+                    id="email"
                     label="email"
+                    onChange={this.handleChange}
                     // className={classes.textField}
                     margin="normal"
                 />
                 <TextField
-                    id="standard-name"
+                    id="gender"
                     label="Gender"
+                    onChange={this.handleChange}
                     // className={classes.textField}
                     margin="normal"
                 />
                 <TextField
-                    id="standard-name"
+                    id="password"
                     label="Password"
+                    onChange={this.handleChange}
                     // className={classes.textField}
                     margin="normal"
                 />
                 <TextField
-                    id="standard-name"
-                    label="Adress"
+                    id="address"
+                    label="Address"
+                    onChange={this.handleChange}
                     // className={classes.textField}
                     margin="normal"
                 />
+                <Button size="small" variant="outlined" onClick={()=>this.handleSubmit()}>
+                    Sign Up
+                </Button>
             </div>
         );
     }
