@@ -66,7 +66,6 @@ class ContenidoCuento extends Component {
 
     
     previousPage = () => {
-        console.log(this.state.pagina, this.contenidoCuento.length)
         if (this.state.pagina > 0){
             this.setState({
                 pagina: this.state.pagina = this.state.pagina-1
@@ -74,7 +73,6 @@ class ContenidoCuento extends Component {
         }
     }
     nextPage= ()=>{
-        console.log(this.state.pagina, this.contenidoCuento.length)
         if (this.state.pagina < this.contenidoCuento.length -1){
             this.setState({
                 pagina: this.state.pagina = this.state.pagina+1
@@ -83,7 +81,6 @@ class ContenidoCuento extends Component {
     }
     
     render() {
-        console.log(this.contenidoCuento)
         const { classes } = this.props
         return (
             <div className={classes.superContainer}>
@@ -92,7 +89,6 @@ class ContenidoCuento extends Component {
                         className={classes.page}
                         onClick={this.previousPage}
                     >
-                        {console.log(this.contenidoCuento[this.state.pagina])}
                         <p>
                             {this.contenidoCuento[this.state.pagina][0]}
                         </p>
@@ -108,6 +104,7 @@ class ContenidoCuento extends Component {
                             {this.contenidoCuento[this.state.pagina][1]}
                         </p>
                     </div>
+                    <p draggable={true} onDrag={()=>console.log("Cerrando")}> Cierrame</p>
                 </div>
             </div>
         );
