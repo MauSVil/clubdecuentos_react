@@ -124,11 +124,28 @@ function deleteUser(req, res) {
     })
 }
 
+function loginUser(req,res){
+    var params = req.body;
+    User.findOne(params, function(err, result) {
+        if(result){
+            res.status(200).send({
+                message: 'User found'
+            })
+        }
+        else{
+            res.send({
+                message:'User not found'
+            })
+        }
+      });
+    }
+
 module.exports = {
     pruebas,
     saveUser,
     getUsers,
     getUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    loginUser
 }

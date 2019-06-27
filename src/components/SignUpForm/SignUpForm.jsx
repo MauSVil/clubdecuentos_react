@@ -27,6 +27,7 @@ class SignUpForm extends Component {
         password: '',
         address: '',
       };
+      initialState= this.state
     
       handleChange = (e) => {
         this.setState({
@@ -36,12 +37,6 @@ class SignUpForm extends Component {
 
       handleSubmit = ()=>{
         axios.post('http://localhost:3800/api/user', this.state)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
       }
       
       render() {

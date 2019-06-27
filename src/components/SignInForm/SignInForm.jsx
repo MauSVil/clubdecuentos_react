@@ -3,6 +3,7 @@ import usuarios from '../../users'
 import { withStyles } from '@material-ui/styles'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import axios from 'axios'
 
 const styles = {
     signUpInputs: {
@@ -21,33 +22,26 @@ class SignInForm extends Component {
         }
     }
 
+    
     handleChange= (e)=> {
         this.setState({
             [e.target.id]: e.target.value,
         })
     }
-
+    
     // Validacion si existe el usuario
-
-    handleSubmit = ()=>{
-        if (usuarios.some((user)=>{
-            return user.user === this.state.username && user.password === this.state.password
-        })){
-            this.setState({
-                errors: {
-                    userCorrect: true,
-                }
-            })
-        }
-        else {
-            this.setState({
-                errors: {
-                    userCorrect: false,
-                }
-            })
-        }
+    
+    handleSubmit = async ()=>{
+        const {username, password} = this.state
+        const userlog= {username, password}
+        const user= await axios.post('http://localhost:3800/api/login/user', userlog)
+        this.setState({
+            errors: {
+                userCorrect: user.data.message
+            }
+        })
     }
-
+    
     render() {
         const { classes } = this.props
         return (
@@ -69,9 +63,7 @@ class SignInForm extends Component {
                 <Button size="small" variant="outlined" onClick={()=>this.handleSubmit()}>
                     Sign In
                 </Button>
-                {this.state.errors.userCorrect ? <p>
-                    Lo hiciste bien!
-                </p> : <p>Intentalo de nuevo</p>}
+                <p>{this.state.errors.userCorrect}</p>
             </div>
         );
     }

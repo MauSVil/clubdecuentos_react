@@ -26,9 +26,9 @@ class ListaCuentos extends Component {
   }
 
   componentDidMount = async ()=>{
-    const response = await axios.get('http://localhost:9000/cuentos')
+    const response = await axios.get('http://localhost:3800/api/cuentos/cuentos')
     this.setState({
-      cuentos: response.data
+      cuentos: response.data.stories
     })
   }
 
