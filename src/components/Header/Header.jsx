@@ -30,22 +30,23 @@ const Header = (props) => {
     return (
         <header className={classes.header}>
             <div className={classes.links}>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link>&nbsp;
                 <Link to="creatucuento">Crea Tu Cuento</Link>
-                <Link to="signin">Sign In</Link>
-                <Link to="signup">Sign Up</Link>
-                <Link to="profile">Profile</Link>
+                {isAuthenticated && <span onClick={() => logout()}>Log out</span>}
                 {!isAuthenticated && (
-                    <button
-                        onClick={() =>
-                            loginWithRedirect({})
-                        }
-                        >
+                    <span
+                    onClick={() =>
+                        loginWithRedirect({})
+                    }
+                    >
                         Log in
-                    </button>
+                    </span>
                 )}
 
-                {isAuthenticated && <button onClick={() => logout()}>Profile</button>}
+                {isAuthenticated && (
+                    <Link to="profile">Profile</Link>
+                )
+                }
             </div>
         </header>
     );

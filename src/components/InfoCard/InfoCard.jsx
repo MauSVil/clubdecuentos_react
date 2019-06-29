@@ -5,7 +5,6 @@ import clsx from 'clsx'
 const styles= {
     infoContainer: {
         marginTop: '30px',
-        border: '1px solid black',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
