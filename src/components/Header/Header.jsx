@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles'
 import { Link } from "@reach/router"
+import { useAuth0 } from "../../react-auth0-wrapper";
 
 const styles={
     header:{
@@ -23,6 +24,8 @@ const styles={
 }
 
 const Header = (props) => {
+    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    console.log(useAuth0)
     const { classes } = props
     return (
         <header className={classes.header}>
@@ -32,6 +35,17 @@ const Header = (props) => {
                 <Link to="signin">Sign In</Link>
                 <Link to="signup">Sign Up</Link>
                 <Link to="profile">Profile</Link>
+                {!isAuthenticated && (
+                    <button
+                        onClick={() =>
+                            loginWithRedirect({})
+                        }
+                        >
+                        Log in
+                    </button>
+                )}
+
+                {isAuthenticated && <button onClick={() => logout()}>Profile</button>}
             </div>
         </header>
     );
