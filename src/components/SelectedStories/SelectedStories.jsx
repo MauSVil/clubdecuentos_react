@@ -2,7 +2,11 @@ import React from 'react';
 import { withStyles } from '@material-ui/styles'
 import ListaCuentos from '../ListaCuentos';
 
-const cuentos = [{ title: "Ejemplo", description: "Descripcion Ejemplo"}, {title: "Ejemplo1", description: "Descripcion Ejemplo1"}]
+const cuentos = [
+    { title: "Ejemplo", description: "Descripcion Ejemplo"}, 
+    {title: "Ejemplo1", description: "Descripcion Ejemplo1"},
+    {title: "Ejemplo2", description: "Descripcion Ejemplo2"},
+]
 
 const styles={
     storiesSelectedContainer: {
