@@ -14,6 +14,7 @@ const styles= {
             textAlign: 'center',
         },
         '& hr': {
+            borderColor: '#6258A0',
             width: '50%'
         },
         '& p':{

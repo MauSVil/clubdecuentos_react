@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import SignIn from './views/SingIn';
 import SignUp from './views/SingUp';
 import CreateStory from './views/CreateStory';
-import Profile from "./components/Profile/Profile";
+import Profile from "./views/Profile/Profile";
 
 
 const styles = {
@@ -27,30 +27,20 @@ function App(props) {
 
     const { classes } = props
 
-    return ( <
-        div className = { classes.app } >
-        <
-        Header / >
-        <
-        div className = { classes.contentContainer } >
-        <
-        Router >
-        <
-        Home path = "/" / >
-        <
-        CreateStory path = "/creatucuento" / >
-        <
-        SignIn path = "/signin" / >
-        <
-        SignUp path = "/signup" / >
-        <
-        Profile path = "/profile" / >
-        <
-        /Router> <
-        /div> <
-        Footer / >
-        <
-        /div>
+    return ( 
+    <div className = { classes.app }>
+        <Header/>
+        <div className = { classes.contentContainer } >
+            <Router >
+                <Home path = "/" />
+                <CreateStory path = "/creatucuento" />
+                <SignIn path = "/signin" />
+                <SignUp path = "/signup" />
+                <Profile path = "/profile"/>
+            </Router>
+        </div>
+        <Footer/>
+    </div>
     );
 }
 

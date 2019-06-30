@@ -15,7 +15,6 @@ const styles = {
         textAlign: 'center',
         borderRadius: '10px',
         boxShadow: '7px 10px 5px 0px rgba(255,255,255,1)',
-        border: '1px solid black',
     },
     selected: {
         opacity: '1',

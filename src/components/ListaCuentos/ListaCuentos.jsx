@@ -3,7 +3,6 @@ import Cuento from '../Cuento'
 import Character from '../Character';
 import { withStyles } from '@material-ui/styles'
 import clsx from 'clsx';
-import axios from 'axios';
 
 const styles = {
   storiesContainer: {
@@ -22,16 +21,7 @@ class ListaCuentos extends Component {
     index: -1,
     firstTime: true,
     showCharacter: false,
-    cuentos: [],
   }
-
-  componentDidMount = async ()=>{
-    const response = await axios.get('http://localhost:3800/api/cuentos/cuentos')
-    this.setState({
-      cuentos: response.data.stories
-    })
-  }
-
   
   historySelected= (i)=>{
     this.setState({
@@ -51,9 +41,8 @@ class ListaCuentos extends Component {
   }
   
   render() {
-    const {toggleStory} = this.props;
+    const {toggleStory, cuentos, classes} = this.props;
     const {showCharacter} = this.state
-    const { classes } = this.props;
     const storyAppearance = clsx(
       {
         [classes.historySelected] : showCharacter,
@@ -62,7 +51,7 @@ class ListaCuentos extends Component {
     )
     return (
       <div className={storyAppearance}>
-      {this.state.cuentos.map((cuento, i)=>{
+      {cuentos && cuentos.map((cuento, i)=>{
         const {title, author, cost, description, image} = cuento
         return(
           <Cuento

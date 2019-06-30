@@ -5,8 +5,9 @@ import { useAuth0 } from "../../react-auth0-wrapper";
 
 const styles={
     header:{
-        backgroundColor: 'lightgray',
+        backgroundColor: '#6258A0',
         display: 'flex',
+        color: 'white',
         justifyContent: 'flex-end',
         alignItems: 'center',
         width: '100%',
@@ -18,21 +19,22 @@ const styles={
         justifyContent: 'space-around',
         '& a': {
             textDecoration: 'none',
-            color: 'black',
+            color: 'white',
         },
-    }
+        '& span': {
+            cursor: 'pointer'
+        },
+    },
 }
 
 const Header = (props) => {
     const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-    console.log(useAuth0)
     const { classes } = props
     return (
         <header className={classes.header}>
             <div className={classes.links}>
-                <Link to="/">Home</Link>&nbsp;
+                <Link to="/">Home</Link>
                 <Link to="creatucuento">Crea Tu Cuento</Link>
-                {isAuthenticated && <span onClick={() => logout()}>Log out</span>}
                 {!isAuthenticated && (
                     <span
                     onClick={() =>
@@ -44,7 +46,10 @@ const Header = (props) => {
                 )}
 
                 {isAuthenticated && (
-                    <Link to="profile">Profile</Link>
+                    <>
+                        <Link to="profile">Profile</Link>
+                        <span onClick={() => logout()}>Log out</span>
+                    </>
                 )
                 }
             </div>
