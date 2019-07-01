@@ -23,6 +23,8 @@ const styles= {
     },
     cuentosContainer: {
         display: 'flex',
+        width: '80%',
+        justifyContent: 'space-around'
     },
     cuento: {
         height: '110px',

@@ -66,7 +66,6 @@ class ContenidoCuento extends Component {
 
     
     previousPage = () => {
-        console.log(this.state.pagina, this.contenidoCuento.length)
         if (this.state.pagina > 0){
             this.setState({
                 pagina: this.state.pagina = this.state.pagina-1
@@ -74,7 +73,6 @@ class ContenidoCuento extends Component {
         }
     }
     nextPage= ()=>{
-        console.log(this.state.pagina, this.contenidoCuento.length)
         if (this.state.pagina < this.contenidoCuento.length -1){
             this.setState({
                 pagina: this.state.pagina = this.state.pagina+1

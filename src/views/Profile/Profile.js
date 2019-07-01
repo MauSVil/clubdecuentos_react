@@ -21,8 +21,6 @@ const Profile = (props) => {
     const { loading, user } = useAuth0();
     const { classes } = props;
 
-    console.log(user)
-
     if (loading || !user) {
         return "Loading...";
     }
