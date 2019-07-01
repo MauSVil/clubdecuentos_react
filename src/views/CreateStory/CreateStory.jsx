@@ -85,6 +85,7 @@ class CreaTuCuento extends Component {
                 <h2>Crea Tu Cuento</h2>
                 <div className={showStory ? classes.blur : classes.normal}>
                     <ListaCuentos
+                        enableCharacter
                         cuentos={cuentos}
                         toggleStory={this.toggleStory}
                     />

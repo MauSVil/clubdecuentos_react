@@ -22,7 +22,7 @@ const SelectedStories = (props) => {
         <h2>
             Historias Seleccionadas
         </h2>
-        <ListaCuentos cuentos={cuentos}/>
+        <ListaCuentos enableCharacter={false} cuentos={cuentos}/>
     </div> );
 }
  

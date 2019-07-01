@@ -10,32 +10,40 @@ function pruebas(req, res) {
 function saveUser(req, res) {
     var user = new User()
     var params = req.body;
-    if (params.name) {
-        user.name = params.name;
-        user.username = params.username;
-        user.password = params.password;
-        user.email = params.email;
-        user.address = params.address;
-        user.save((err, userStored) => {
-            if (err) {
-                res.status(500).send({
-                    message: 'Error en el servidor'
+    if (params.email) {
+        User.findOne(params, function(err, result) {
+            if(result){
+                res.status(200).send({
+                    message: 'User exists'
                 })
-            } else {
-                if (userStored) {
-                    res.status(200).send({
-                        user: userStored
-                    })
-                } else {
-                    res.status(200).send({
-                        message: 'No se ha guardado la fruta'
-                    })
-                }
             }
-        })
+            else{
+                user.email = params.email;
+                user.nickname = params.nickname;
+                user.name = params.name;
+                user.save((err, userStored) => {
+                    if (err) {
+                        res.status(500).send({
+                            message: 'Error en el servidor'
+                        })
+                    } else {
+                        if (userStored) {
+                            res.status(200).send({
+                                user: userStored
+                            })
+                        } else {
+                            res.status(200).send({
+                                message: 'No se ha guardado el usuario'
+                            })
+                        }
+                    }
+                }) 
+            }
+          });
+       
     } else {
         res.status(200).send({
-            message: 'El nombre de la fruta es obligatorio'
+            message: 'El email del usuario es obligatorio'
         })
     }
 }

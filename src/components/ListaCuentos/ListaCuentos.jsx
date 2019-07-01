@@ -41,7 +41,7 @@ class ListaCuentos extends Component {
   }
   
   render() {
-    const {toggleStory, cuentos, classes} = this.props;
+    const {toggleStory, cuentos, classes, enableCharacter} = this.props;
     const {showCharacter} = this.state
     const storyAppearance = clsx(
       {
@@ -70,6 +70,7 @@ class ListaCuentos extends Component {
       })}
       {showCharacter && 
       <Character
+        enableCharacter={enableCharacter}
         onClick={this.handleClickDecline}
         toggleStory={toggleStory}
       />}

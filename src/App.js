@@ -5,8 +5,6 @@ import Home from './views/Home/Home';
 import { withStyles } from '@material-ui/styles'
 import texture from './assets/texture1.png'
 import Footer from './components/Footer';
-import SignIn from './views/SingIn';
-import SignUp from './views/SingUp';
 import CreateStory from './views/CreateStory';
 import Profile from "./views/Profile/Profile";
 
@@ -34,8 +32,6 @@ function App(props) {
             <Router >
                 <Home path = "/" />
                 <CreateStory path = "/creatucuento" />
-                <SignIn path = "/signin" />
-                <SignUp path = "/signup" />
                 <Profile path = "/profile"/>
             </Router>
         </div>
