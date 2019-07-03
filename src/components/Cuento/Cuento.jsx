@@ -28,6 +28,7 @@ const styles = {
     },
     storyInfo: {
         margin: '5px',
+        lineHeight: '30px',
     },
     image: {
         width: '200px',

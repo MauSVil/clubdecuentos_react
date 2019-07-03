@@ -26,6 +26,7 @@ const styles={
     showStory: {
         top: '-80px',
         height: '500px',
+        minWidth: '1050px'
     },
     hideStory: {
         top: '-320px',
@@ -37,7 +38,7 @@ const styles={
     storyContentContainer: {
         zIndex: '1000',
         backgroundColor: 'white',
-        
+        width: '100%'
     }
 }
 
@@ -78,7 +79,7 @@ class CreaTuCuento extends Component {
                         <OutsideClickHandler
                             onOutsideClick={()=>this.setState({showStory :false})}
                         >
-                            <ContenidoCuento/>
+                            <ContenidoCuento cuentos={cuentos} handleClick={()=>this.setState({showStory: false})}/>
                         </OutsideClickHandler>
                     </div>
                 </div>

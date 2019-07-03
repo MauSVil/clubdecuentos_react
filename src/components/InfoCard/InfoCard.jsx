@@ -18,6 +18,7 @@ const styles= {
             width: '50%'
         },
         '& p':{
+            lineHeight: '40px',
             textAlign: 'center',
         }
     },

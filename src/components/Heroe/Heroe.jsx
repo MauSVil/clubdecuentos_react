@@ -32,6 +32,9 @@ const styles= {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
+        '&:hover': {
+            transform: 'scale(1.2)'
+        }
     },
     cuento1: {
         backgroundImage: `url(${cuento1})`,
