@@ -92,7 +92,6 @@ class ContenidoCuento extends Component {
                             {this.state.content.length > 0 && this.state.content[this.state.pagina][1]}
                         </p>
                     </div>
-                    <p draggable={true} onDrag={()=>console.log("Cerrando")}> Cierrame</p>
                 </div>
                 <div className={classes.buttonContainer}>
                     <Button
