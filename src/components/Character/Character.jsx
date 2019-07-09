@@ -6,12 +6,37 @@ const styles={
     characterContainer: {
         display: 'flex',
     },
-    form: {
+    CharacterInputs: {
+        background: 'none',        
+        borderBottom: '1px solid #C9C9C9',
+        borderTop: '0px',
+        borderLeft: '0px',
+        borderRight: '0px',
+    },
+    CharacterBlank: {
+    color: '#C9C9C9',
+    },
+     form: {
         display: 'flex',
         flexDirection: 'row',
         minWidth: '300px',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    derecha: {
+      position: 'absolute',
+      bottom: '0',
+      margin: '0 0 0 32%',
+      width: '30%',
+
+    },
+    espacio: {
+      padding: '9px 15px',
+      margin: '0 15px',
+      background: '#423B71',
+      color: '#fff',
+      borderRadius: '13px',
+      width: '100px',
     },
     labels: {
         display: 'flex',
@@ -34,7 +59,7 @@ const styles={
         '& select': {
             padding: '5px 10px'
         },
-    }
+    },
 }
 
 class Character extends Component {
@@ -63,7 +88,7 @@ class Character extends Component {
     }
 
     render() {
-        const { classes, toggleStory, enableCharacter } = this.props
+        const { classes, toggleStory } = this.props
         return (
             <div className={classes.characterContainer}>
                 <div>
@@ -81,8 +106,6 @@ class Character extends Component {
                         skinColor={this.state.skinColor}
                     />
                 </div>
-                {enableCharacter &&
-                <>
                 <form className={classes.form}>
                     <div className={classes.labels}>
                         <label htmlFor="name">Nombre</label>
@@ -96,23 +119,26 @@ class Character extends Component {
                         <label htmlFor="skinColor">Color de Piel</label>                        
                     </div>
                     <div className={classes.inputs}>
-                        <input
+                        <input className={classes.CharacterInputs}
                             onChange={this.handleChange}
                             type="text" 
                             name="name" 
                             id="name"
                         />
-                        <input
+                        <input className={classes.CharacterInputs}
                             onChange={this.handleChange} 
                             type="text" 
                             name="lastname" 
                             id="lastname"
                         />
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="hairStyle" 
                             id="hairStyle"
                             onChange={this.handleChange}
                         >
+                            <option value="blank" className={classes.CharacterBlank} >
+                                Selecciona una opcion
+                            </option>
                             <option value="LongHairDreads">
                                 Pelo Largo Ondulado
                             </option>
@@ -129,11 +155,14 @@ class Character extends Component {
                                 Con sombrero
                             </option>
                         </select>
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="accessoriesType" 
                             id="accessoriesType"
                             onChange={this.handleChange}
                         >
+                            <option value="blank">
+                                Selecciona una opcion
+                            </option>
                             <option value="Round">
                                 Lentes Redondos
                             </option>
@@ -150,11 +179,14 @@ class Character extends Component {
                                 Lentes Hipster Negros
                             </option>
                         </select>
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="clotheType" 
                             id="clotheType"
                             onChange={this.handleChange}
                         >
+                            <option value="blank">
+                                Selecciona una opcion
+                            </option>
                             <option value="Hoodie">
                                 Sudadera
                             </option>
@@ -171,11 +203,14 @@ class Character extends Component {
                                 Overall
                             </option>
                         </select>
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="clotheColor" 
                             id="clotheColor"
                             onChange={this.handleChange}
                         >
+                            <option value="blank">
+                                Selecciona una opcion
+                            </option>
                             <option value="Black">
                                 Negro
                             </option>
@@ -192,11 +227,14 @@ class Character extends Component {
                                 Blanco
                             </option>
                         </select>
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="eyeType" 
                             id="eyeType"
                             onChange={this.handleChange}
                         >
+                            <option value="blank">
+                                Selecciona una opcion
+                            </option>
                             <option value="Close">
                                 Cerrados
                             </option>
@@ -213,11 +251,14 @@ class Character extends Component {
                                 Guiñando
                             </option>
                         </select>
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="mouthType" 
                             id="mouthType"
                             onChange={this.handleChange}
                         >
+                            <option value="blank">
+                                Selecciona una opcion
+                            </option>
                             <option value="Tongue">
                                 Con Lengua
                             </option>
@@ -234,11 +275,14 @@ class Character extends Component {
                                 Preocupado
                             </option>
                         </select>
-                        <select
+                        <select className={classes.CharacterInputs}
                             name="skinColor" 
                             id="skinColor"
                             onChange={this.handleChange}
                         >
+                            <option value="blank">
+                                Selecciona una opcion
+                            </option>
                             <option value="Pale">
                                 Palido
                             </option>
@@ -257,12 +301,10 @@ class Character extends Component {
                         </select>
                     </div>
                 </form>
-                <div>
-                    <button onClick={()=>toggleStory()}>Accept</button>
-                    <button onClick={this.props.onClick}>Decline</button>
+                <div className={classes.derecha}>
+                    <button className={classes.espacio} onClick={()=>toggleStory()}>Aceptar</button>
+                    <button className={classes.espacio} onClick={this.props.onClick}>Borrar</button>
                 </div>
-                </>
-                }
             </div>
         );
     }
