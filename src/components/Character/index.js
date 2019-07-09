@@ -1,2 +1,2 @@
-import Character from './Characters'
+import Character from './Character'
 export default Character
