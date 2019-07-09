@@ -23,6 +23,8 @@ const styles= {
     },
     cuentosContainer: {
         display: 'flex',
+        width: '80%',
+        justifyContent: 'space-around'
     },
     cuento: {
         height: '110px',
@@ -30,6 +32,9 @@ const styles= {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
+        '&:hover': {
+            transform: 'scale(1.2)'
+        }
     },
     cuento1: {
         backgroundImage: `url(${cuento1})`,

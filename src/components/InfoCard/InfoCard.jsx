@@ -5,7 +5,6 @@ import clsx from 'clsx'
 const styles= {
     infoContainer: {
         marginTop: '30px',
-        border: '1px solid black',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -15,9 +14,11 @@ const styles= {
             textAlign: 'center',
         },
         '& hr': {
+            borderColor: '#6258A0',
             width: '50%'
         },
         '& p':{
+            lineHeight: '40px',
             textAlign: 'center',
         }
     },

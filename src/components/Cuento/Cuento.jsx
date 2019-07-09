@@ -15,7 +15,6 @@ const styles = {
         textAlign: 'center',
         borderRadius: '10px',
         boxShadow: '7px 10px 5px 0px rgba(255,255,255,1)',
-        border: '1px solid black',
     },
     selected: {
         opacity: '1',
@@ -29,6 +28,7 @@ const styles = {
     },
     storyInfo: {
         margin: '5px',
+        lineHeight: '30px',
     },
     image: {
         width: '200px',

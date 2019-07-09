@@ -1,11 +1,13 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles'
 import { Link } from "@reach/router"
+import { useAuth0 } from "../../react-auth0-wrapper";
 
 const styles={
     header:{
-        backgroundColor: 'lightgray',
+        backgroundColor: '#6258A0',
         display: 'flex',
+        color: 'white',
         justifyContent: 'flex-end',
         alignItems: 'center',
         width: '100%',
@@ -17,21 +19,39 @@ const styles={
         justifyContent: 'space-around',
         '& a': {
             textDecoration: 'none',
-            color: 'black',
+            color: 'white',
         },
-    }
+        '& span': {
+            cursor: 'pointer'
+        },
+    },
 }
 
 const Header = (props) => {
+    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
     const { classes } = props
     return (
         <header className={classes.header}>
             <div className={classes.links}>
                 <Link to="/">Home</Link>
                 <Link to="creatucuento">Crea Tu Cuento</Link>
-                <Link to="signin">Sign In</Link>
-                <Link to="signup">Sign Up</Link>
-                <Link to="profile">Profile</Link>
+                {!isAuthenticated && (
+                    <span
+                    onClick={() =>
+                        loginWithRedirect({})
+                    }
+                    >
+                        Log in
+                    </span>
+                )}
+
+                {isAuthenticated && (
+                    <>
+                        <Link to="profile">Profile</Link>
+                        <span onClick={() => logout()}>Log out</span>
+                    </>
+                )
+                }
             </div>
         </header>
     );

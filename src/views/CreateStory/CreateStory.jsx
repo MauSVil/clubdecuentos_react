@@ -4,6 +4,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { withStyles } from '@material-ui/styles'
 import ContenidoCuento from '../../components/ContenidoCuento/ContenidoCuento';
 import clsx from 'clsx';
+import axios from 'axios';
 
 const styles={
     creaTuCuentoContainer: {
@@ -25,6 +26,7 @@ const styles={
     showStory: {
         top: '-80px',
         height: '500px',
+        minWidth: '1050px'
     },
     hideStory: {
         top: '-320px',
@@ -36,13 +38,21 @@ const styles={
     storyContentContainer: {
         zIndex: '1000',
         backgroundColor: 'white',
-        
+        width: '100%'
     }
 }
 
 class CreaTuCuento extends Component {
     state={
         showStory: false,
+        cuentos: [],
+    }
+    
+    componentDidMount = async ()=>{
+        const response = await axios.get('http://localhost:3800/api/cuentos/cuentos')
+        this.setState({
+        cuentos: response.data.stories
+        })
     }
 
     toggleStory = ()=>{
@@ -53,7 +63,7 @@ class CreaTuCuento extends Component {
 
     render() {
         const { classes } = this.props
-        const { showStory } = this.state
+        const { showStory, cuentos } = this.state
         const completeStory = clsx(
             classes.completeStory,
             {
@@ -68,14 +78,16 @@ class CreaTuCuento extends Component {
 
                         <OutsideClickHandler
                             onOutsideClick={()=>this.setState({showStory :false})}
-                            >
-                            <ContenidoCuento/>
+                        >
+                            <ContenidoCuento cuentos={cuentos} handleClick={()=>this.setState({showStory: false})}/>
                         </OutsideClickHandler>
                     </div>
                 </div>
                 <h2>Crea Tu Cuento</h2>
                 <div className={showStory ? classes.blur : classes.normal}>
                     <ListaCuentos
+                        enableCharacter
+                        cuentos={cuentos}
                         toggleStory={this.toggleStory}
                     />
                 </div>

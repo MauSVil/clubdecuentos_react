@@ -63,7 +63,7 @@ class Character extends Component {
     }
 
     render() {
-        const { classes, toggleStory } = this.props
+        const { classes, toggleStory, enableCharacter } = this.props
         return (
             <div className={classes.characterContainer}>
                 <div>
@@ -81,6 +81,8 @@ class Character extends Component {
                         skinColor={this.state.skinColor}
                     />
                 </div>
+                {enableCharacter &&
+                <>
                 <form className={classes.form}>
                     <div className={classes.labels}>
                         <label htmlFor="name">Nombre</label>
@@ -259,6 +261,8 @@ class Character extends Component {
                     <button onClick={()=>toggleStory()}>Accept</button>
                     <button onClick={this.props.onClick}>Decline</button>
                 </div>
+                </>
+                }
             </div>
         );
     }

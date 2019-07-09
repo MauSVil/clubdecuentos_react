@@ -5,6 +5,8 @@ import { withStyles } from '@material-ui/styles'
 import Heroe from '../../components/Heroe';
 import Eliza from '../../assets/eliza.png'
 import Oso from '../../assets/oso.png'
+import { useAuth0 } from "../../react-auth0-wrapper";
+import axios from 'axios'
 
 const styles= {
     homeContainer: {
@@ -12,8 +14,22 @@ const styles= {
     }
 }
 
+const postUser = async (user)=>{
+    const { nickname, email, name} = user;
+    const userToSend = {
+        nickname,
+        email,
+        name
+    }
+    await axios.post('http://localhost:3800/api/user', userToSend)
+}
+
 const Home = (props) => {
     const { classes } = props
+    const { user } = useAuth0();
+
+    user && postUser(user)
+
     return (
         <div className={classes.homeContainer}>
             <Heroe/>
